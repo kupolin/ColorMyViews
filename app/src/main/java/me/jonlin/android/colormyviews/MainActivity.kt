@@ -33,12 +33,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun setListeners(): Unit {
         val clickableViews: List<View> = listOf(
-            binding.boxOneText, binding.boxTwoText, binding.boxThreeText, binding.boxFourText,
-            binding.boxFiveText, binding.constraintLayout
+            binding.boxOneText,
+            binding.boxTwoText,
+            binding.boxThreeText,
+            binding.boxFourText,
+            binding.boxFiveText,
+            binding.constraintLayout,
+            binding.redButton,
+            binding.yellowButton,
+            binding.greenButton
         )
 
-        val map: HashMap<Int, Int> = hashMapOf(1 to 2, 3 to 5)
-        val oneVal = map[1]
+//        val map: HashMap<Int, Int> = hashMapOf(1 to 2, 3 to 5)
+//        val oneVal = map[1]
 
         for (i in clickableViews) {
             i.setOnClickListener { setBackgroundColor(it) }
@@ -64,6 +71,9 @@ class MainActivity : AppCompatActivity() {
             R.id.box_three_text -> binding.boxThreeText.setBackgroundResource(R.drawable.ic_launcher_background)
             R.id.box_four_text -> binding.boxFourText.setBackgroundResource(android.R.color.holo_green_dark)
             R.id.box_five_text -> binding.boxFiveText.setBackgroundResource(android.R.color.holo_green_light)
+            R.id.red_button -> binding.boxThreeText.setBackgroundColor(Color.RED)
+            R.id.yellow_button -> binding.boxFourText.setBackgroundColor(Color.YELLOW)
+            R.id.green_button -> binding.boxFiveText.setBackgroundColor(Color.GREEN)
             else -> binding.constraintLayout.setBackgroundColor(Color.LTGRAY)
         }
         binding.invalidateAll()
